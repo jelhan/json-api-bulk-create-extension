@@ -48,7 +48,7 @@ All resources, which are referenced by another resource, **MUST** either have [c
 
 ### Example request
 
-This example shows a request document to create a post and a related tag in a single request. Additionally, the post is associated with an existing tag.
+This example shows a request document to create a post and a related tag in a single request. Additionally, the post is associated with an existing tag. See an [example response](#example-response) as well.
 
 ```json
 {
