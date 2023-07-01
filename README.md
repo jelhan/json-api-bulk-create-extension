@@ -46,7 +46,7 @@ Every included resource **MUST** reference resources included as primary data ei
 
 All resources, which are referenced by another resource, **MUST** either have [client-generated IDs](https://jsonapi.org/format/#crud-creating-client-ids) or a `lid` to locally [identify the resource](https://jsonapi.org/format/#document-resource-object-identification) within the document.
 
-### Example document
+### Example request
 
 This example shows a request document to create a post and a related tag in a single request. Additionally, the post is associated with an existing tag.
 
@@ -140,3 +140,43 @@ A server **MAY** respond with other HTTP status codes.
 A server **MAY** include error details with error responses.
 
 A server **MUST** prepare responses, and a client **MUST** interpret responses, in accordance with HTTP semantics.
+
+### Example response
+
+This example shows a response document from the [example request](#example-request). Both the post and the tag which was requested to be created are included as primary data. The additional already existing tag isn't allowed to be included since the response only can contain created resources.
+
+```json
+{
+  "data": [
+    {
+      "type": "post",
+      "id": "42f5bc89-616a-42a1-b374-80507e71bb9c"
+      "attributes": {
+        "title": "Awesome JSON:API"
+      },
+      "relationships": {
+        "tags": {
+          "data": [
+            {
+              "type": "tags",
+              "id": "7c237585-983e-4767-a425-5f2277ba7351"
+            },
+            {
+              "type": "tags",
+              "id": "97277267-920b-4f65-87dd-a699e4ae5c8b"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "tags",
+      "id": "97277267-920b-4f65-87dd-a699e4ae5c8b",
+      "attributes": {
+        "name": "api-design"
+      }
+    }
+  ]
+}
+```
+
