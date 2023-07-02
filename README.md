@@ -54,7 +54,7 @@ This example shows a request document to create a post and a related tag in a si
 {
   "bulk:data": [
     {
-      "type": "post",
+      "type": "posts",
       "lid": "1"
       "attributes": {
         "title": "Awesome JSON:API"
