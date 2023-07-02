@@ -65,10 +65,6 @@ This example shows a request document to create a post and a related tag in a si
             {
               "type": "tags",
               "id": "7c237585-983e-4767-a425-5f2277ba7351"
-            },
-            {
-              "type": "tags",
-              "lid": "2"
             }
           ]
         }
@@ -78,9 +74,18 @@ This example shows a request document to create a post and a related tag in a si
   "bulk:included": [
     {
       "type": "tags",
-      "lid": "2",
       "attributes": {
         "name": "api-design"
+      },
+      "relationships": {
+        "posts": {
+          "data": [
+            {
+              "type": "posts",
+              "lid": "1"
+            }
+          ]
+        }
       }
     }
   ]
