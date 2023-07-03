@@ -143,7 +143,7 @@ A server **MUST** prepare responses, and a client **MUST** interpret responses, 
 
 ### Example response document
 
-This example shows a response document from the [example request document](#example-request-document). Both the post and the tag which was requested to be created are included as primary data. The additional already existing tag isn't allowed to be included since the response only can contain created resources.
+This example shows a response document from the [example request document](#example-request-document). Both the post and the tag which was requested to be created are included as primary data. The additional already existing tag shouldn't be placed in the included data since the response only should return created resources, but it could be included if requested via the include query parameter.
 
 ```json
 {
