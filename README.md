@@ -54,7 +54,7 @@ This example shows a request document to create a post and a related tag in a si
 {
   "bulk:data": [
     {
-      "type": "post",
+      "type": "posts",
       "lid": "1"
       "attributes": {
         "title": "Awesome JSON:API"
@@ -65,10 +65,6 @@ This example shows a request document to create a post and a related tag in a si
             {
               "type": "tags",
               "id": "7c237585-983e-4767-a425-5f2277ba7351"
-            },
-            {
-              "type": "tags",
-              "lid": "2"
             }
           ]
         }
@@ -78,9 +74,18 @@ This example shows a request document to create a post and a related tag in a si
   "bulk:included": [
     {
       "type": "tags",
-      "lid": "2",
       "attributes": {
         "name": "api-design"
+      },
+      "relationships": {
+        "posts": {
+          "data": [
+            {
+              "type": "posts",
+              "lid": "1"
+            }
+          ]
+        }
       }
     }
   ]
@@ -179,4 +184,3 @@ This example shows a response document from the [example request document](#exam
   ]
 }
 ```
-
