@@ -46,9 +46,9 @@ Every included resource **MUST** reference resources included as primary data ei
 
 All resources, which are referenced by another resource, **MUST** either have [client-generated IDs](https://jsonapi.org/format/#crud-creating-client-ids) or a `lid` to locally [identify the resource](https://jsonapi.org/format/#document-resource-object-identification) within the document.
 
-### Example request
+### Example request document
 
-This example shows a request document to create a post and a related tag in a single request. Additionally, the post is associated with an existing tag. See an [example response](#example-response) as well.
+This example shows a request document to create a post and a related tag in a single request. Additionally, the post is associated with an existing tag. See an [example response document](#example-response-document) as well.
 
 ```json
 {
@@ -141,9 +141,9 @@ A server **MAY** include error details with error responses.
 
 A server **MUST** prepare responses, and a client **MUST** interpret responses, in accordance with HTTP semantics.
 
-### Example response
+### Example response document
 
-This example shows a response document from the [example request](#example-request). Both the post and the tag which was requested to be created are included as primary data. The additional already existing tag isn't allowed to be included since the response only can contain created resources.
+This example shows a response document from the [example request document](#example-request-document). Both the post and the tag which was requested to be created are included as primary data. The additional already existing tag isn't allowed to be included since the response only can contain created resources.
 
 ```json
 {
