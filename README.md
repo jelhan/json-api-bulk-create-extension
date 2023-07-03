@@ -149,7 +149,7 @@ This example shows a response document from the [example request document](#exam
 {
   "data": [
     {
-      "type": "post",
+      "type": "posts",
       "id": "42f5bc89-616a-42a1-b374-80507e71bb9c"
       "attributes": {
         "title": "Awesome JSON:API"
